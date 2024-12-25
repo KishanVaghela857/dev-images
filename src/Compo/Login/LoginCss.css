@@ -1,0 +1,219 @@
+/* General styling for the page */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f7f7f7;
+    margin: 0;
+    padding: 0;
+}
+
+
+.Logo {
+    font-size: 20px;
+    font-weight: bolder;
+    text-align: center;
+}
+
+.container-all{
+    justify-content: space-between;
+    display: flex;
+}
+
+/* Left Container */
+.left-container {
+    width: 50%;
+    background-color: #6756ff;
+    color: rgb(0, 0, 0);
+    padding: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.left-container-text {
+    text-align: center;
+}
+
+.left-container-text h1 {
+    font-size: 40px;
+    margin-bottom: 10px;
+}
+
+.left-container-text p {
+    font-size: 16px;
+    margin-bottom: 20px;
+}
+
+.left-container-text .btn {
+    padding: 10px 20px;
+    background-color: #070069;
+    border: none;
+    color: white;
+    font-size: 16px;
+    cursor: pointer;
+    border-radius: 5px;
+    text-decoration: none;
+}
+
+.left-container-text .btn:hover {
+    background-color: #0a0004;
+}
+
+/* Right Container - Login Form */
+.login-container {
+    width: 50%;
+    padding: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.login-form {
+    background-color: white;
+    padding: 30px;
+    width: 100%;
+    max-width: 400px;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.login-form h2 {
+    text-align: center;
+    font-size: 24px;
+    margin-bottom: 20px;
+}
+
+.login-form input[type="email"],
+.login-form input[type="password"] {
+    width: 100%;
+    padding: 10px;
+    /* margin-bottom: 0px; */
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    font-size: 16px;
+}
+
+.login-form input[type="submit"] {
+    width: 100%;
+    padding: 12px;
+    background-color: #28a745;
+    color: white;
+    font-size: 16px;
+    border-radius: 5px;
+    border: none;
+    cursor: pointer;
+}
+
+.login-form input[type="submit"]:hover {
+    background-color: #218838;
+}
+
+.relative-label {
+    position: relative;
+}
+
+.password-toggle-button {
+    position: absolute;
+    right: 10px;
+    top: 33%;
+    transform: translateY(-50%);
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    color: #007bff;
+    font-size: 14px;
+}
+
+.login-form span {
+    display: block;
+    text-align: center;
+    margin-top: 15px;
+}
+
+.login-form span a {
+    color: #007bff;
+    text-decoration: none;
+}
+    
+    .login-form span a:hover {
+        text-decoration: underline;
+    }
+
+/* Media Queries for Responsive Design */
+@media screen and (max-width: 768px) {
+    /* Stack containers vertically for smaller screens */
+
+    .container-all{
+        flex-direction: column;
+    }
+
+    .left-container, .login-container {
+        width: 100%;
+        padding: 20px;
+    }
+
+    /* Adjust text size and margins for mobile devices */
+    .left-container-text h1 {
+        font-size: 30px;
+    }
+
+    .left-container-text p {
+        font-size: 14px;
+    }
+
+    .left-container-text .btn {
+        font-size: 14px;
+        padding: 8px 15px;
+    }
+
+    .login-form h2 {
+        font-size: 22px;
+    }
+
+    .login-form input[type="email"],
+    .login-form input[type="password"],
+    .login-form input[type="submit"] {
+        padding: 10px;
+        font-size: 14px;
+    }
+
+    .password-toggle-button {
+        font-size: 10px;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    /* Further adjustments for very small screens (e.g., mobile phones) */
+    .left-container-text h1 {
+        font-size: 26px;
+    }
+
+    .left-container-text p {
+        font-size: 12px;
+    }
+
+    .left-container-text .btn {
+        font-size: 12px;
+        padding: 6px 12px;
+    }
+
+    .login-form h2 {
+        font-size: 20px;
+    }
+
+    .login-form input[type="email"],
+    .login-form input[type="password"],
+    .login-form input[type="submit"] {
+        padding: 8px;
+        font-size: 12px;
+    }
+
+    .password-toggle-button {
+        font-size: 10px;
+    }
+
+    .login-form span {
+        font-size: 12px;
+    }
+}

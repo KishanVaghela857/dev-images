@@ -1,0 +1,261 @@
+.imgLogo{
+    vertical-align: middle;
+    width: 70px;
+    height: 70px;
+    mix-blend-mode: multiply;
+    /* mix-blend-mode: multiply; */
+}
+
+ul{
+    justify-content: center;
+    text-align: center;
+    align-items: center;
+}
+
+/* Sidebar container */
+.navbar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px 20px;
+    background-color: #f8f9fa;
+    position: sticky; /* Light background for the navbar */
+}
+
+.container-fluid {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+}
+
+/* Logo styling */
+.imgLogo {
+    vertical-align: middle;
+    width: 50px;
+    height: 50px;
+    margin-right: 10px; /* Space between logo and text */
+}
+
+h3 {
+    margin: 0;
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #343a40; /* Darker text color */
+}
+
+/* Navbar Toggler Button */
+.navbar-toggler {
+    border: none;
+    background: transparent;
+}
+
+/* Navbar links */
+.navbar-nav {
+    display: flex;
+    align-items: center;
+}
+
+.nav-item {
+    margin-right: 20px; /* Space between menu items */
+}
+
+.nav-link {
+    font-size: 1rem;
+    font-weight: bold;
+    color: #495057; /* Darker text for links */
+    text-decoration: none;
+}
+
+.nav-link:hover {
+    color: #007bff; /* Highlight color on hover */
+}
+
+.nav-link.active {
+    color: #007bff; /* Active link color */
+}
+
+/* Dropdown Menu */
+.dropdown-menu {
+    background-color: #ffffff;
+    border: 1px solid #ddd;
+}
+
+.dropdown-item {
+    font-size: 0.9rem;
+    padding: 10px;
+}
+
+.dropdown-item:hover {
+    background-color: #f8f9fa; /* Hover effect for dropdown items */
+}
+
+/* Disabled Link */
+.nav-link.disabled {
+    color: #6c757d; /* Disabled link color */
+}
+
+.navbar-collapse {
+    display: flex;
+    justify-content: flex-end; /* Align navbar items to the right */
+}
+
+@media (max-width: 767px) {
+    .navbar-nav {
+        flex-direction: column;
+        margin-top: 10px;
+    }
+
+    .navbar-toggler {
+        display: block;
+    }
+
+    .imgLogo {
+        margin-right: 0;
+        margin-bottom: 10px;
+    }
+
+    h3 {
+        font-size: 1.2rem;
+        margin-bottom: 10px;
+    }
+}
+
+
+li a{
+    font-size: 15px;
+    font-weight: bold;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+    
+}/* Default styles for laptop and larger screens */
+
+
+h3{
+    margin-right: 20px;
+    font-family: sans-serif;
+    font-weight: bold;
+}
+
+/* Download icon styles */
+.card .download-icon {
+    position: absolute;
+    bottom: 10px;
+    right: 10px;
+    color: white;
+    font-size: 1.5rem;
+    opacity: 0; /* Hidden by default */
+    transition: opacity 0.3s ease; /* Smooth transition */
+    cursor: pointer;
+}
+
+.card:hover .download-icon {
+    opacity: 1; /* Show icon on hover */
+}
+
+
+.image-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* 3 cards per row on laptop */
+    gap: 20px;
+    padding: 20px;
+}
+
+/* Image card */
+.card {
+    position: relative;
+    overflow: hidden;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.card img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    transition: transform 0.3s ease;
+}
+
+.card:hover img {
+    transform: scale(1.05); /* Zoom effect on hover */
+}
+
+/* Overlay for like count */
+.card .overlay {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background: rgba(0, 0, 0, 0.6);
+    color: white;
+    padding: 5px 10px;
+    border-radius: 5px;
+    font-weight: bold;
+}
+
+.card .like-icon {
+    position: absolute;
+    bottom: 10px;
+    left: 10px;
+    color: white;
+    font-size: 1.2rem;
+    cursor: pointer;
+    transition: color 0.3s ease;
+}
+
+.card .like-icon.liked {
+    color: red;
+}
+
+/* Responsive layout for tablets */
+@media (max-width: 1024px) {
+    .image-grid {
+        grid-template-columns: repeat(2, 1fr); /* 2 cards per row on tablet */
+    }
+}
+
+/* Responsive layout for smaller screens (mobile) */
+@media (max-width: 768px) {
+    .image-grid {
+        grid-template-columns: repeat(2, 1fr); /* 2 cards per row */
+        gap: 15px;
+        padding: 10px;
+    }
+
+    .card img {
+        height: 150px; /* Smaller image height for mobile */
+    }
+
+    .card .overlay {
+        top: 5px;
+        right: 5px;
+        padding: 3px 7px;
+        font-size: 0.9rem;
+    }
+
+    .card .like-icon {
+        bottom: 5px;
+        left: 5px;
+        font-size: 1rem;
+    }
+}
+
+/* Ultra-small devices (mobile phones <= 388px) */
+@media (max-width: 388px) {
+    .image-grid {
+        grid-template-columns: 1fr; /* 1 card per row */
+        gap: 10px;
+    }
+
+    .card img {
+        height: 120px; /* Reduce image height for tiny screens */
+    }
+
+    .card .overlay {
+        font-size: 0.8rem;
+    }
+
+    .card .like-icon {
+        font-size: 0.9rem;
+    }
+}

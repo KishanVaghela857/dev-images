@@ -1,0 +1,94 @@
+.uniq {
+  background: url('https://pixabay.com/get/g1716ee0f476063ebf86e6a52d384de86297e550e4603b940343ec19a9c439310c39cfe7e7239ea871f57269eb561ebfa40d8c5a0eacb0623b45ee2c33ab4cf3d_640.jpg') no-repeat center center/cover;
+  padding: 50px 20px;
+  color: #fff;
+  text-align: center;
+  border: none;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  border-radius: 10px;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+}
+
+
+
+/* filter: blur(30px); Added this for ::before pseudo-element */
+
+.navbar {
+  justify-content: center;
+  position: relative;
+  z-index: 2;
+  background: transparent;
+}
+
+form {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  background: transparent; /* Ensures form elements are centered */
+}
+
+.card-title {
+  font-size: 1.8rem;
+  font-weight: 700;
+  margin-bottom: 10px;
+  color: #ffffff;
+  /* text-shadow: 2px 2px 4px white; */
+}
+
+.card-text {
+  font-size: 1rem;
+  margin-bottom: 30px;
+  color: #ffffff;
+}
+
+.form-control {
+  width: 450px;
+  padding: 15px;
+  /* border-radius: 30px; */
+  border: 1px solid #ddd;
+  margin-right: 10px;
+  display: inline-block;
+  /* background: transparent; */
+  color: #ddd;
+}
+
+
+.btnall {
+  background-color: #007bff;
+  border: none;
+  color: #fff;
+  padding: 10px 20px;
+  /* border-radius: 30px; */
+  font-size: 1rem;
+  cursor: pointer;
+  transition: all 0.3s ease-in-out;
+  /* justify-content: center;
+  text-align: center;
+  align-items: center; */
+}
+
+.btnall:hover {
+  background-color: #0056b3;
+  color: #fff;
+}
+
+.card-footer {
+  background: rgba(255, 255, 255, 0.6);
+  color: #ddd;
+  font-size: 0.9rem;
+  padding: 10px;
+  border-top: 1px solid #444;
+}
+
+@media (max-width: 767px) {
+  .form-control {
+      width: 100%;
+      margin-right: 0;
+  }
+  
+  .btnall {
+      width: 100%;
+  }
+}

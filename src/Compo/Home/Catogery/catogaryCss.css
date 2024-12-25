@@ -1,0 +1,65 @@
+/* General styling for the video category container */
+#video-category {
+  margin: 20px;
+  padding: 20px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  background-color: #f9f9f9;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+#text{
+  color: #000000;
+}
+
+#catogary {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+/* Styling for the title */
+#category-title {
+  font-size: 24px;
+  color: #000000;
+  font-weight: bolder;
+  margin-bottom: 10px;
+}
+
+/* Styling for the list */
+#category-list {
+  list-style-type: none;
+  padding: 0;
+}
+
+/* Individual category styles */
+#category-list li {
+  margin: 8px 0;
+}
+
+#category-nature a {
+  color: green;
+}
+
+#category-technology a {
+  color: blue;
+}
+
+#category-people a {
+  color: orange;
+}
+
+#category-abstract a {
+  color: purple;
+}
+
+#category-animals a {
+  color: brown;
+}
+
+/* Add hover effects */
+#category-list li a:hover {
+  text-decoration: underline;
+}

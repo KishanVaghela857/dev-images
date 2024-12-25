@@ -1,0 +1,93 @@
+/* Pro.css */
+
+/* Profile Section */
+#profile-container {
+    width: 60%;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #f4f4f4;
+    border-radius: 10px;
+    text-align: center;
+    /* border: 1px solid black; */
+    box-shadow: 2px 2px 4px grey;
+
+}
+
+#profile-header {
+    margin-bottom: 20px;
+}
+
+#profile-header img {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+}
+
+#profile-details h4 {
+    font-size: 18px;
+    color: #333;
+    margin: 10px 0;
+    text-align: start;
+    margin-left: 200px;
+}
+
+#edit-button {
+    background-color: #007bff;
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+#edit-button:hover {
+    background-color: #0056b3;
+}
+
+/* Edit Form Section */
+#edit-container {
+    width: 50%;
+    margin: 20px auto;
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+}
+
+#edit-form input {
+    width: 100%;
+    padding: 10px;
+    margin: 10px 0;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+#edit-form label {
+    font-size: 14px;
+    color: #555;
+    margin-bottom: 5px;
+    display: block;
+}
+
+#save-button,
+#cancel-button {
+    background-color: #28a745;
+    color: #fff;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-right: 10px;
+}
+
+#cancel-button {
+    background-color: #dc3545;
+}
+
+#save-button:hover {
+    background-color: #218838;
+}
+
+#cancel-button:hover {
+    background-color: #c82333;
+}
