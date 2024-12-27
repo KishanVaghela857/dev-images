@@ -36,6 +36,7 @@ function Catogary() {
 
         // Increment counter and check if all categories have been processed
         imagesFetched += 1;
+        // setLoading(true); // All categories fetched
         if (imagesFetched === totalCategories) {
           setLoading(false); // All categories fetched
         }

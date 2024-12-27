@@ -106,6 +106,12 @@
     cursor: pointer;
     
   }
+/* 
+  p { 
+    color: black;
+    text-align: center;
+    font-size: 35px;
+  } */
 
 
 @keyframes spin {

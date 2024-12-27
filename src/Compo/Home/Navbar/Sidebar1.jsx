@@ -40,9 +40,14 @@ function Sidebar1() {
                   Home
                 </Link>
               </li>
+              <li className="nav-item">
+                <Link className="nav-link active" to="/Compo/Home/Test/Test">
+                  Test
+                </Link>
+              </li>
               {/* <li className="nav-item">
-                <Link className="nav-link" to="/videos">
-                  Videos
+                <Link className="nav-link" to="/Compo/Home/AI.jsx/AI">
+                  AI
                 </Link>
               </li> */}
               {/* <li className="nav-item dropdown">

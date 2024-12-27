@@ -10,6 +10,8 @@ import CategoryImages from './Compo/Home/Catogery/CategoryImages';
 import UserPro from './Compo/Home/UserProfile/UserPro';
 import LoaderHome from './Compo/LoaderHome';
 import { Suspense } from 'react';
+import AI from './Compo/Home/AI.jsx/AI'
+import Test from './Compo/Home/Test/Test'
 
 function App() {
   const location = useLocation();
@@ -28,13 +30,16 @@ function App() {
         <Route path="/register" element={<Register />} />
 
         {/* Protected Routes */}
-        <Route element={<ProtectedRoute />}>
-          {/* <Route path="/" index element={<LoaderHome/>}/> */}
           <Route path="/" index element={<Home />} />
+        {/* <Route element={<ProtectedRoute />}> */}
+          {/* <Route path="/" index element={<LoaderHome/>}/> */}
           <Route path="/categories" element={<Catogary />} />
           <Route path="/category/:categoryName" element={<CategoryImages />} />
+          <Route path="/Compo/Home/AI.jsx/AI" element={<AI/>} />
+          {/* <Route path="/Compo/Home/Test/Test" element={<Test/>} /> */}
+          
           <Route path='/Compo/Home/UserProfile/UserPro' element={<UserPro/>}/>
-        </Route>
+        {/* </Route> */}
       </Routes>
       </Suspense>
     </>

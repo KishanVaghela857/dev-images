@@ -27,8 +27,8 @@
     font-size: 18px;
     color: #333;
     margin: 10px 0;
-    text-align: start;
-    margin-left: 200px;
+    /* text-align: start;
+    margin-left: 200px; */
 }
 
 #edit-button {

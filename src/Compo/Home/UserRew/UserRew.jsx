@@ -16,7 +16,7 @@ function UserRew() {
       {userStar.map((user) => {
         const { id, name, rating, review } = user;
         return ( <div style={{display: 'flex'}}>
-          <div key={id} id="rewCard" style={{ border: '1px solid #ccc', margin: '10px', padding: '10px', borderRadius: '5px',  maxWidth: '200px'}}>
+          <div key={id} id="rewCard" style={{ border: '1px solid #ccc', margin: '10px', padding: '10px', borderRadius: '5px',  maxWidth: '500px'}}>
             <h3 id="username" style={{ marginBottom: '5px' }}>{name}</h3>
             <div>
               {/* Render stars dynamically based on the rating */}

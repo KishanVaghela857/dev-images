@@ -19,11 +19,13 @@ const Images = ({ searchQuery }) => {
       const data = await response.json();
       setImages(data.hits);
       setLoading(false); // Hide loader once images are fetched
+    
     } catch (error) {
       console.error('Error fetching images:', error);
       setLoading(false); // Hide loader if there is an error
     }
   };
+
 
   const openImageDetailsPage = (image) => {
     const detailsPage = window.open('', '_blank');
@@ -55,7 +57,7 @@ const Images = ({ searchQuery }) => {
             align-items: center;
           }
           .image-container img {
-            max-width: 600px;
+            max-width: 700px;
             max-height: 500px;
             border-radius: 10px;
             box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
@@ -150,6 +152,9 @@ const Images = ({ searchQuery }) => {
     detailsPage.document.close();
   };
 
+
+
+
   useEffect(() => {
     fetchImages(searchQuery);
   }, [searchQuery]);
@@ -163,17 +168,17 @@ const Images = ({ searchQuery }) => {
         <div className="image-grid" loading="lazy">
           {images.slice(0, visibleCount).map((image, index) => (
             <div className="card" key={index}>
-              <img src={image.webformatURL} alt={image.tags} />
+              <img src={image.webformatURL} alt={image.tags} style={{height: '300px'}}/>
               <div className="overlay">❤️ {image.likes}</div>
               <i className="download-icon" onClick={() => openImageDetailsPage(image)}>
                 <FaDownload />
               </i>
             </div>
-          ))}
-        </div>
-      ) : (
-        <p>No images found.</p>
-      )}
+            ))}
+          </div>
+        ) : (
+          <div className="text-center">No images found matching the search query.</div>
+        )}
     </div>
   );
 };
