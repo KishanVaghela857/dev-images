@@ -36,7 +36,7 @@ function App() {
           <Route path="/categories" element={<Catogary />} />
           <Route path="/category/:categoryName" element={<CategoryImages />} />
           <Route path="/Compo/Home/AI.jsx/AI" element={<AI/>} />
-          {/* <Route path="/Compo/Home/Test/Test" element={<Test/>} /> */}
+          <Route path="/Compo/Home/Test/Test" element={<Test/>} />
           
           <Route path='/Compo/Home/UserProfile/UserPro' element={<UserPro/>}/>
         {/* </Route> */}
