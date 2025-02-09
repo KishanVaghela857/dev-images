@@ -93,7 +93,7 @@ function Form() {
                                     onChange={(e) => setFormData({ ...formData, username: e.target.value })}
                                     placeholder='Enter username'
                                 />
-                                {error.username && <p>{error.username}</p>}
+                                {error.username && <p style={{color: 'red'}}>{error.username}</p>}
                             </label>
                             <label>
                                 <input
@@ -103,7 +103,7 @@ function Form() {
                                     onChange={(e) => setFormData({ ...formData, email: e.target.value })}
                                     placeholder='Enter Email'
                                 />
-                                {error.email && <p>{error.email}</p>}
+                                {error.email && <p  style={{color: 'red'}} >{error.email}</p>}
                             </label>
 
                             <label>
@@ -117,7 +117,7 @@ function Form() {
                                 <button type="button" onClick={() => setShowPassword(!showPassword)}>
                                     {showPassword ? "Hide" : "Show"} Password
                                 </button>
-                                {error.password && <p>{error.password}</p>}
+                                {error.password && <p  style={{color: 'red'}} >{error.password}</p>}
                             </label>
 
                             {/* <label>

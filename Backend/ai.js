@@ -1,32 +1,39 @@
-const express = require("express");
-const bodyParser = require("body-parser");
-const { GoogleGenerativeAI } = require("@google/generative-ai");
+const express = require('express');
+const cors = require('cors');
+const { Db } = require('mongodb');
+const mongoose = require('mongoose')
+const PORT = 8000
 
-const app = express();
-app.use(bodyParser.json());
-const cors = require("cors");
+const app = express()
+app.use(express.json());
 app.use(cors());
 
-const genAI = new GoogleGenerativeAI("AIzaSyD1iPkVubL6ZwdQrwOzQOuswvAS4lwICYU");
-const model = genAI.getGenerativeModel({ model: "gemini-1.5-flash" });
+const usersSchema = new mongoose.Schema({
+  name: String,
+  email: String,
+  age: Number,
+})
 
-app.post("/generate", async (req, res) => {
-  const { prompt } = req.body;
-  console.log("Received Prompt:", prompt); // Log the prompt received from the frontend
+const userModal = mongoose.model("users", usersSchema)
+
+mongoose.connect('mongodb://127.0.0.1:27017/admin', {
+  useNewUrlParser: true,
+  useUnifiedTopology: true
+}).then(() => console.log('DB connected...')).catch((err) => console.log(err))
+
+app.get('/getUsers', async (req, res) => {
   try {
-    const result = await model.generateContent(prompt);
-    console.log("Generated Response:", result.response.text()); // Log the AI's response
-    res.json({ response: result.response.text() });
-  } catch (error) {
-    console.error("Error generating response:", error); // Log any errors
-    res.status(500).json({ error: "Failed to generate response" });
+    console.log("Fetching users from MongoDB...");
+    const users = await userModal.find({})
+    console.log("Users found:", users);
+    res.json(users);
+  } catch (err) {
+    console.error("Error fetching users:", err);
+    res.status(500).json({ error: "Internal Server Error", details: err.message });
   }
 });
 
 
-// Change the port to 5000 for compatibility with React
-app.listen(5000, () => {
-  console.log("Server running on http://localhost:5000");
-});
-
-  
+app.listen(PORT, () => {
+  console.log(`server running ${PORT}`);
+})

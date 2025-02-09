@@ -8,8 +8,6 @@ function Hero({ onSearch }) {
         e.preventDefault();
         if (searchTerm.trim() !== '') {
             onSearch(searchTerm);
-            // Call the parent-provided onSearch function
-
             setSearchTerm('');
         }
     };

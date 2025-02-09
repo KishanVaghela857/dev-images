@@ -3,8 +3,12 @@ import './LoaderHome.css'; // Make sure to include the CSS for the loader
 
 const LoaderHome = () => {
   return (
-    <div className="loader-container">
-      <div className="spinner"></div>
+    <div class="loading" style={{textAlign: 'center'}}>
+      <span></span>
+      <span></span>
+      <span></span>
+      <span></span>
+      <span></span>
     </div>
   );
 };

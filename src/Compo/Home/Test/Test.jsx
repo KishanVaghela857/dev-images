@@ -1,11 +1,16 @@
-import React from 'react'
+import React, { useState, useEffect } from 'react';
+import './style.css'
+import Test2 from './Test2'
 
-function Test() {
+const Test = (closeModel) => {
+
+
   return (
-    <div>
-      hello this is kishan side
-    </div>
-  )
-}
+    <>
+      <Test2/>
+    </>
+    )
+  }
 
-export default Test
+
+export default Test; 

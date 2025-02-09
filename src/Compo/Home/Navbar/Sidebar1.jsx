@@ -18,7 +18,7 @@ function Sidebar1() {
 
   return (
     <div>
-      <nav className="navbar navbar-expand-lg navbar-light bg-light">
+      <nav className="navbar navbar-expand-lg navbar-light bg-light sticky-top">
         <div className="container-fluid">
           <img src={imgLogo} className="imgLogo" alt="Logo" />
           <h3>Dev Images</h3>
@@ -41,8 +41,8 @@ function Sidebar1() {
                 </Link>
               </li>
               <li className="nav-item">
-                <Link className="nav-link active" to="/Compo/Home/Test/Test">
-                  Test
+                <Link className="nav-link active" to="/videos">
+                  Explore Videos
                 </Link>
               </li>
               {/* <li className="nav-item">
@@ -105,7 +105,7 @@ function Sidebar1() {
               {isLoggedIn && (
                 <ul className="dropdown-menu dropdown-menu-end" aria-labelledby="userDropdown">
                   <li>
-                    <Link className="dropdown-item" to="/Compo/Home/UserProfile/UserPro">
+                    <Link className="dropdown-item" to="/user-profile">
                       Profile
                     </Link>
                   </li>

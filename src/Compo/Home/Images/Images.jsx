@@ -6,7 +6,7 @@ import LoaderHome from '../../LoaderHome'; // Import LoaderHome component
 const Images = ({ searchQuery }) => {
   const [images, setImages] = useState([]);
   const [loading, setLoading] = useState(false);
-  const [visibleCount, setVisibleCount] = useState(20);
+  const [visibleCount, setVisibleCount] = useState(5);
 
   const likes = JSON.parse((localStorage.getItem('likes')));
 
@@ -19,7 +19,7 @@ const Images = ({ searchQuery }) => {
       const data = await response.json();
       setImages(data.hits);
       setLoading(false); // Hide loader once images are fetched
-    
+
     } catch (error) {
       console.error('Error fetching images:', error);
       setLoading(false); // Hide loader if there is an error
@@ -117,7 +117,7 @@ const Images = ({ searchQuery }) => {
           <p><strong>Likes:</strong> <span id="likes-count" class="likes">❤️ ${currentLikes}</span></p>
           <p><strong>Downloads:</strong> ${image.downloads}</p>
           <button id="like-btn" class="like-btn">Like</button>
-          <button id="download-btn" class="download-btn">Download</button>
+          <button id="download-btn" download class="download-btn">Download</button>
         </div>
         <script>
           const likeButton = document.getElementById('like-btn');
@@ -139,10 +139,12 @@ const Images = ({ searchQuery }) => {
           });
 
           downloadButton.addEventListener('click', () => {
-            const link = document.createElement('a');
-            link.href = '${image.largeImageURL}';
-            link.download = 'downloaded-image.jpg';
-            link.click();
+          const link = document.createElement('a');
+          link.href = image.largeImageURL;
+          link.download = 'downloaded-image.jpg';
+          document.body.appendChild(link);
+          link.click();
+          document.body.removeChild(link);
           });
         </script>
       </body>
@@ -160,26 +162,33 @@ const Images = ({ searchQuery }) => {
   }, [searchQuery]);
 
   return (
-    <div className="image-grid-container">
-      <h1 className="text-center">Your Favorite Images, Ready to Download</h1>
-      {loading ? (
-        <LoaderHome />
-      ) : images.length > 0 ? (
-        <div className="image-grid" loading="lazy">
-          {images.slice(0, visibleCount).map((image, index) => (
-            <div className="card" key={index}>
-              <img src={image.webformatURL} alt={image.tags} style={{height: '300px'}}/>
-              <div className="overlay">❤️ {image.likes}</div>
-              <i className="download-icon" onClick={() => openImageDetailsPage(image)}>
-                <FaDownload />
-              </i>
-            </div>
+    <>
+      <div className="image-grid-container">
+        <h1 className="text-center">Your Favorite Images, Ready to Download</h1>
+        {loading ? (
+          <LoaderHome />
+        ) : images.length > 0 ? (
+          <div className="image-grid">
+            {images.slice(0, visibleCount).map((image, index) => (
+              <div className="card" key={index}>
+                <img src={image.webformatURL} alt={image.tags} style={{ height: '300px' }} />
+                <div className="overlay">❤️ {image.likes}</div>
+                <i className="download-icon" onClick={() => openImageDetailsPage(image)}>
+                  <FaDownload />
+                </i>
+              </div>
             ))}
           </div>
         ) : (
           <div className="text-center">No images found matching the search query.</div>
         )}
-    </div>
+      </div>
+      {!loading && visibleCount < images.length && (
+        <div style={{ textAlign: 'center', padding: '5px 10px' }}>
+          <button onClick={() => setVisibleCount(visibleCount + 10)}>Load More</button>
+        </div>
+      )}
+    </>
   );
 };
 

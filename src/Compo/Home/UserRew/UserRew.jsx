@@ -11,7 +11,7 @@ function UserRew() {
 
   return (
         <div className="my-3"  style={{textAlign: 'center', fontFamily: 'sans-serif',}}>
-            <h1 style={{ fontSize: '30px' , fontWeight: 'bolder'}}>...Rating...</h1>
+            {/* <h1 style={{ fontSize: '30px' , fontWeight: 'bolder'}}>...Rating...</h1> */}
       <div className="container d-flex" style={{maxWidth: '800px'}}>
       {userStar.map((user) => {
         const { id, name, rating, review } = user;

@@ -45,7 +45,7 @@ function CategoryImages() {
               <p style={{ fontSize: '0.9rem', color: '#555', margin: '10px 0' }}>{image.tags}</p>
               <a
                 href={image.largeImageURL}
-                download
+                
                 style={{
                   display: 'inline-block',
                   padding: '10px 20px',
